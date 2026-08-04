@@ -1,5 +1,7 @@
 # Qoder-browser-bridge
 
+[English](./README_EN.md) | 中文
+
 独立的浏览器 MCP Server —— 复用 **QoderWork/Qoder 浏览器连接器扩展**，让 Claude Code、opencode 等任意 MCP 客户端直接操控你的真实浏览器（保留登录态、Cookies、真实指纹）。
 
 ## 工作原理
