@@ -57,7 +57,7 @@ node server.js --no-discovery  # 不写发现文件（调试用）
 ## Claude Code 配置
 
 ```bash
-claude mcp add browser -- node E:\software\AAATools\qw-browser-bridge\server.js
+claude mcp add browser -- node ~/server.js
 ```
 
 或手动编辑 `~/.claude.json` / 项目 `.mcp.json`：

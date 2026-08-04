@@ -57,7 +57,7 @@ Logs go to stderr (stdout is reserved for the MCP protocol). Ready when you see 
 ## Claude Code config
 
 ```bash
-claude mcp add browser -- node E:\software\AAATools\qw-browser-bridge\server.js
+claude mcp add browser -- node ~/server.js
 ```
 
 Or edit `~/.claude.json` / project `.mcp.json` manually:
