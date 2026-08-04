@@ -1,6 +1,6 @@
-# qw-browser-bridge
+# Qoder-browser-bridge
 
-独立的浏览器 MCP Server —— 复用 **QoderWork 浏览器连接器扩展**，让 Claude Code、opencode 等任意 MCP 客户端直接操控你的真实浏览器（保留登录态、Cookies、真实指纹）。
+独立的浏览器 MCP Server —— 复用 **QoderWork/Qoder 浏览器连接器扩展**，让 Claude Code、opencode 等任意 MCP 客户端直接操控你的真实浏览器（保留登录态、Cookies、真实指纹）。
 
 ## 工作原理
 
@@ -27,7 +27,7 @@ QoderWork 浏览器连接器扩展 (Chrome/Edge Extension)
 ## 依赖
 
 - Node.js 18+
-- Edge/Chrome 中已安装并启用 **QoderWork 浏览器连接器扩展**（QoderWork 设置里打开"浏览器连接器"即可自动安装）
+- Edge/Chrome 中已安装并启用 **Qoder浏览器连接器扩展**（QoderWork 设置里打开"浏览器连接器"即可自动安装）
 - 浏览器处于运行状态
 
 ## 手动运行
@@ -39,6 +39,18 @@ node server.js --no-discovery  # 不写发现文件（调试用）
 ```
 
 日志输出到 stderr（stdout 保留给 MCP 协议）。看到 `扩展已连接` 和 `已获取 N 个浏览器工具` 即就绪。
+
+## cc-switch 配置
+
+```json
+{
+  "type": "stdio",
+  "command": "node",
+  "args": [
+    "~/server.js"
+  ]
+}
+```
 
 ## Claude Code 配置
 
@@ -53,7 +65,7 @@ claude mcp add browser -- node E:\software\AAATools\qw-browser-bridge\server.js
   "mcpServers": {
     "browser": {
       "command": "node",
-      "args": [~/server.js"]
+      "args": ["~/server.js"]
     }
   }
 }
@@ -68,7 +80,7 @@ claude mcp add browser -- node E:\software\AAATools\qw-browser-bridge\server.js
   "mcp": {
     "browser": {
       "type": "local",
-      "command": ["node", "E:\\software\\AAATools\\qw-browser-bridge\\server.js"],
+      "command": ["node", ~/server.js"],
       "enabled": true
     }
   }
